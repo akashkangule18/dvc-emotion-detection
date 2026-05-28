@@ -37,12 +37,12 @@ def metrics(accuracy, recall, precision, auc):
     }
 
     # getting json file
-    with open('metrics.json','w') as file:
+    with open('reports/metrics.json','w') as file:
         json.dump(metrics_dict, file, indent=4)
 
 def main():
-        X_test,y_test = data('./data/transformed/test.csv')
-        clf = pickle.load(open('model.pkl','rb'))
+        X_test,y_test = data('./data/processed/test.csv')
+        clf = pickle.load(open('models/model.pkl','rb'))
         y_pred = clf.predict(X_test)
         y_proba = clf.predict_proba(X_test)[:,1]
         accuracy, recall, precision, auc = score(y_test, y_pred, y_proba)

@@ -66,9 +66,9 @@ def save_data(data_path,train_df, test_df):
 
 def main_():
     max_features = load_file('params.yaml')
-    train_data, test_data = data('./data/processed/train_processed.csv','./data/processed/test_processed.csv')
+    train_data, test_data = data('./data/interim/train_processed.csv','./data/interim/test_processed.csv')
     train_df , test_df =  transform(train_data, test_data, max_features)
-    data_path = os.path.join('data','transformed')
+    data_path = os.path.join('data','processed')
     save_data(data_path,train_df, test_df)
 
 if __name__ == '__main__':

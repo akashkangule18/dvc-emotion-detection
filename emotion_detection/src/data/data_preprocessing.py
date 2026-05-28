@@ -86,7 +86,7 @@ def save_data(data_path, train_processed_data, test_processed_data):
 def main():
     train_data, test_data =  load_data('./data/raw/train.csv','./data/raw/test.csv')
     train_processed_data, test_processed_data = transformation(train_data,test_data)
-    data_path = os.path.join('data','processed')
+    data_path = os.path.join('data','interim')
     save_data(data_path,train_processed_data, test_processed_data)
 
 

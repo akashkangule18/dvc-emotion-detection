@@ -43,9 +43,9 @@ def model(X_train, y_train,n_estimators, max_samples):
 
 def main():
     params = load_file('params.yaml')
-    X_train, y_train = data('./data/transformed/train.csv')
+    X_train, y_train = data('./data/processed/train.csv')
     clf = model(X_train, y_train, params['n_estimators'],params['max_samples'])
-    pickle.dump(clf,open('model.pkl','wb'))
+    pickle.dump(clf,open('models/model.pkl','wb'))
 
 if __name__ == '__main__':
     main()
